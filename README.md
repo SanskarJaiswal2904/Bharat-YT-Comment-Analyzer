@@ -114,3 +114,6 @@ src/
 ## Contributions
 
 Contributions are welcome! Feel free to open issues or submit pull requests.
+
+## Author
+This app is created by [SansKar](https://sanskarjaiswal2904.github.io/Sanskar-Website/index.html).
