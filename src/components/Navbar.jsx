@@ -32,7 +32,7 @@ function ResponsiveAppBar() {
           {/* Logo Icon */}
           <Box
             component="img"
-            src="/YTComment-analyzer.svg" //this one
+            src="/YT-comment-analyzer.svg" 
             alt="App Logo"
             onClick={() => window.location.reload()}
             title='YouTube Comment analyzer.'

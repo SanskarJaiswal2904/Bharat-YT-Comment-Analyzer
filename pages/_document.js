@@ -8,6 +8,9 @@ class MyDocument extends Document {
           {/* Meta Tags */}
           <meta name="description" content="Web site created using create-react-app" />
           <meta name="description" content="Get the total length/duration of a YouTube playlist by passing its link as input. You get the time required to watch that playlist at different speeds." />
+
+          {/* Favicon */}
+          <link rel="icon" href="/YT-comment-analyzer.svg" />
           
           {/* Apple Touch Icon */}
           <link rel="apple-touch-icon" href="/logo192.png" />

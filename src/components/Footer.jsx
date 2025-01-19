@@ -70,9 +70,9 @@ const Footer = () => {
             }}
             >
             This website is built using:{' '}
-            <img src="/html-1.svg" alt="HTML logo" height={'15px'} width={'15px'} style={{ margin: '0 5px' }} title='HTML'/>
-            <img src="/css-3.svg" alt="CSS logo" height={'15px'} width={'15px'} style={{ margin: '0 5px' }} title='CSS'/>
-            <img src="/logo-javascript.svg" alt="Javascript logo" height={'15px'} width={'15px'} style={{ margin: '0 5px' }} title='Javascript' />
+            <img src="/html-1.svg" alt="HTML logo" height={'15px'} width={'15px'} style={{ margin: '0 5px' }} title='HTML5'/>
+            <img src="/css-3.svg" alt="CSS logo" height={'15px'} width={'15px'} style={{ margin: '0 5px' }} title='CSS3'/>
+            <img src="/logo-javascript.svg" alt="Javascript logo" height={'15px'} width={'15px'} style={{ margin: '0 5px' }} title='Javascript (ES6+)' />
             <img src="/next.svg" alt="Next.js logo" height={'37px'} width={'37px'} style={{ margin: '0 5px' }} title='Next.js' />
             <img src="/nodejs-horizontal.svg" alt="Node.js logo" height={'15px'} width={'auto'} style={{ margin: '0 5px' }} title='Node.js' />
             <img src="/gemini-color.svg" alt="Gemini logo" height={'20px'} width={'20px'} style={{ margin: '0 5px' }} title='Gemini AI' />
