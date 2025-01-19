@@ -32,7 +32,7 @@ function ResponsiveAppBar() {
           {/* Logo Icon */}
           <Box
             component="img"
-            src="/YTComment-analyzer.svg"
+            src="/YTComment-analyzer.svg" //this one
             alt="App Logo"
             onClick={() => window.location.reload()}
             title='YouTube Comment analyzer.'
@@ -79,7 +79,7 @@ function ResponsiveAppBar() {
 
           {/* GitHub Icon */}
           <Tooltip title="GitHub">
-            <IconButton sx={{ p: 0, mr: 2 }} onClick={() => window.open("#", "_blank")}>
+            <IconButton sx={{ p: 0, mr: 2 }} onClick={() => window.open("https://github.com/SanskarJaiswal2904/Bharat-YT-Comment-Analyzer", "_blank")}>
               <GitHubIcon sx={{ fontSize: 40, color: (theme) => theme.palette.mode === 'dark' ? 'grey' : 'black'}} />
             </IconButton>
           </Tooltip>
