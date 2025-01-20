@@ -78,7 +78,7 @@ const Mainsection = () => {
     setError(null);
     const inputLines = videoIds.split(/\r?\n/);
     
-    const idRegex = /(?:https?:\/\/(?:www\.)?youtube\.com\/watch\?v=|https?:\/\/youtu\.be\/|^)([a-zA-Z0-9_-]{11})(?:[?&].*)?$/;
+    const idRegex = /(?:v=|\/shorts\/|youtu\.be\/|^)([a-zA-Z0-9_-]{11})(?:\?.*|$)/g;
     const uniqueIds = new Set();
   
     inputLines.forEach((line) => {
@@ -187,10 +187,10 @@ const Mainsection = () => {
                 <IndiaGlobal/>
             </Box>
             <Typography variant='h5' fontWeight={'bold'} sx={{fontSize: {sm : '0.875rem', md: '1rem'}}}>
-            Analyze the comments of any YouTube video:
+            Analyze the comments of any YouTube videos or shorts:
             </Typography>
             <Typography variant='body4' sx={{fontSize: {sm : '0.875rem', md: '1rem'}, my: 2}} >
-            Enter a YouTube video link or video ID or you can enter multiple video link or video ID to analyze the comments, sentiment, and more!
+            Enter a YouTube video/short link or video/short ID or you can enter multiple video/short link or video/short ID to analyze the comments, sentiment, and more!
             </Typography>
         </Box>
         <TextField
@@ -278,7 +278,7 @@ const Mainsection = () => {
       {result.length === 0 ? (
           <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', mt: 4}}>
             {isLoading ? (
-              <EmptySearchMessage message="Searching... The larger the number of comments more time it will take for analyzing" />
+              <EmptySearchMessage message="Searching... The larger the number of comments, the more time it will take to analyze" />
             ) : (
               <EmptySearchMessage message="Search for a playlist to get its details." />
             )}
