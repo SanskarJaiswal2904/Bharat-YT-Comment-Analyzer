@@ -401,7 +401,7 @@ const Mainsection = () => {
                 color="text.primary"
                 sx={{ marginTop: 1 }}
               >
-                <strong> Total Comments:</strong> {data.numberOfComments === 0 ? 'N/A -> Server didn\'t provide number of comments': data.numberOfComments + ' comments analyzed  '} <span style={{'cursor': 'pointer'}} title="If number of comments analyzed is less than the actual comment&#10;that means some of the comment where either deleted or made private.">&#8505;</span>
+                <strong> Total Comments:</strong> {data.numberOfComments === 0 ? 'N/A -> Server didn\'t provide number of comments': data.numberOfComments + ' comments analyzed  '} <span style={{'cursor': 'pointer'}} title="If number of comments analyzed is less than the actual comment&#10;that means some of the comment where either deleted or made private."><img src="/info-button.svg" alt="Info button" height={'15px'} width={'15px'} style={{ marign: '5px 0'}}  /></span>
 
               </Typography>
               <Typography
