@@ -10,7 +10,22 @@ const app = express();
 const PORT = process.env.PORT;
 
 // Middleware
-app.use(cors()); // Enable CORS for all routes
+const allowedOrigins = [
+  'https://bharat-yt-comment-analyzer.vercel.app',
+  'http://localhost:4000',
+];
+
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin || allowedOrigins.includes(origin)) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
+  })
+);
 app.use(express.json()); // Parse JSON request bodies
 
 // Simple route
