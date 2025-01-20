@@ -86,6 +86,7 @@ const Mainsection = () => {
       const match = idRegex.exec(trimmedLine);
       if (match) {
         uniqueIds.add(match[1]);
+        console.log(match[1]);
       }
     });
 
@@ -118,19 +119,20 @@ const Mainsection = () => {
   };
   
 
-  const handleCopyToClipboard = (videoDetails, numberOfComments, parts, index) => {
+  const handleCopyToClipboard = (videoId, videoDetails, numberOfComments, parts, index) => {
     if (!document.hasFocus()) {
       alert("Please ensure the document is in focus to copy the details.");
       return;
     }
   
     const data = {
+      "ID": videoId || "N/A",
       "Channel Title": videoDetails.channelTitle || "N/A",
       "Video Title": videoDetails.title || "N/A",
       "Published At": videoDetails.publishedAt
         ? new Date(videoDetails.publishedAt).toLocaleString()
         : "N/A",
-      "Number of Comments": numberOfComments || "N/A",
+      "Number of Comments": numberOfComments + ' comments analyzed' || "N/A",
       "Prompts": parts.length
         ? parts.map((part, index) => `${part.text}`).join("\n")
         : "No parts available",
@@ -276,7 +278,7 @@ const Mainsection = () => {
       {result.length === 0 ? (
           <Box sx={{display: 'flex', alignItems: 'center', justifyContent: 'center', mt: 4}}>
             {isLoading ? (
-              <EmptySearchMessage message="Searching..." />
+              <EmptySearchMessage message="Searching... The larger the number of comments more time it will take for analyzing" />
             ) : (
               <EmptySearchMessage message="Search for a playlist to get its details." />
             )}
@@ -368,7 +370,14 @@ const Mainsection = () => {
               <Typography
                 variant="body2"
                 color="text.secondary"
-                sx={{ marginTop: 2, wordBreak: 'break-word', color: (theme) => theme.palette.mode === 'light' ? pink[600] : pink[300] }}
+                sx={{ marginTop: 2}}
+              >
+                <strong>ID:</strong> {videoId}
+              </Typography>
+              <Typography
+                variant="body2"
+                color="text.secondary"
+                sx={{ marginTop: 1, wordBreak: 'break-word', color: (theme) => theme.palette.mode === 'light' ? pink[600] : pink[300] }}
               >
                 <strong>Channel:</strong> {channelTitle}
               </Typography>
@@ -449,6 +458,7 @@ const Mainsection = () => {
                   color="secondary"
                   onClick={() => {
                     handleCopyToClipboard(
+                      videoId,
                       data.videoDetails,
                       data.numberOfComments,
                       data.parts,
