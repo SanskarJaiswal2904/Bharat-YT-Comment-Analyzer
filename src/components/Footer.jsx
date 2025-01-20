@@ -80,7 +80,7 @@ const Footer = () => {
 
 
         {/** Just uncomment it */}
-        {/* <Typography sx={{ 
+        <Typography sx={{ 
             mt: 2, 
             textAlign: 'center', // Center text inside Typography
             display: 'flex', // Enables flexbox
@@ -88,8 +88,8 @@ const Footer = () => {
             alignItems: 'center' // Centers content vertically
           }}>
           <a href="https://www.hitwebcounter.com" target="_blank">
-          <img src="https://hitwebcounter.com/counter/counter.php?page=18545710&style=0010&nbdigits=7&type=ip&initCount=5" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>
-        </Typography> */}
+          <img src="https://hitwebcounter.com/counter/counter.php?page=18552717&style=0025&nbdigits=7&type=ip&initCount=0" title="Counter Widget" Alt="Visit counter For Websites"   border="0" /></a>            
+        </Typography>
       </Container>
     </Box>
   
