@@ -78,7 +78,7 @@ const Mainsection = () => {
     setError(null);
     const inputLines = videoIds.split(/\r?\n/);
     
-    const idRegex = /(?:https?:\/\/(?:www\.)?youtube\.com\/watch\?v=|https?:\/\/youtu\.be\/)([a-zA-Z0-9_-]{11})(?:[?&].*)?$/;
+    const idRegex = /(?:https?:\/\/(?:www\.)?youtube\.com\/watch\?v=|https?:\/\/youtu\.be\/|^)([a-zA-Z0-9_-]{11})(?:[?&].*)?$/;
     const uniqueIds = new Set();
   
     inputLines.forEach((line) => {
