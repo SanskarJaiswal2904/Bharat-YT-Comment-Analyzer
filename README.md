@@ -1,6 +1,6 @@
 # YouTube Video Comments Analyzer
 
-A **NEXT.js** application to analyze YouTube video comments using a server-side API. The app allows users to input YouTube video IDs or URLs, fetch comments using an API, and display detailed information about the videos such as title, description, channel details, and comments summary. It uses Gemini API for analysis and categorization of comments. [Live Link](https://bharat-yt-comment-analyzer.onrender.com/).
+A **NEXT.js** application to analyze YouTube video comments using a server-side API. The app allows users to input YouTube video IDs or URLs, fetch comments using an API, and display detailed information about the videos such as title, description, channel details, and comments summary. It uses Gemini API for analysis and categorization of comments. [Live Link](https://bharat-yt-comment-analyzer.vercel.app/).
 
 ---
 
