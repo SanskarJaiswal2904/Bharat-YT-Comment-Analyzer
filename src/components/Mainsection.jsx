@@ -90,7 +90,7 @@ const Mainsection = () => {
 
     const results = [];
     const API_URL =
-      process.env.REACT_APP_API_URL || "https://bharat-yt-comment-analyzer.onrender.com/api/v1";
+      process.env.NEXT_PUBLIC_BACKEND_API_URL || "http://localhost:4000/api/v1";
 
     for (const videoId of uniqueIds) {
       try {
