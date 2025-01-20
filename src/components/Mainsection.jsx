@@ -401,9 +401,26 @@ const Mainsection = () => {
                 color="text.primary"
                 sx={{ marginTop: 1 }}
               >
-                <strong> Total Comments:</strong> {data.numberOfComments === 0 ? 'N/A -> Server didn\'t provide number of comments': data.numberOfComments + ' comments analyzed  '} <span style={{'cursor': 'pointer'}} title="If number of comments analyzed is less than the actual comment&#10;that means some of the comment where either deleted or made private."><img src="/info-button.svg" alt="Info button" height={'15px'} width={'15px'} style={{ marign: '5px 0'}}  /></span>
-
+                <Box sx={{display: 'flex', justifyContent: 'start', alignItems: 'center'}}>
+                  <strong>Total Comments:</strong>{' '}
+                  {data.numberOfComments === 0
+                    ? "N/A -> Server didn't provide number of comments"
+                    : data.numberOfComments + ' comments analyzed  '}
+                  <span
+                    style={{ cursor: 'pointer' }}
+                    title="If number of comments analyzed is less than the actual comment&#10;that means some of the comment where either deleted or made private."
+                  >
+                    <img
+                      src="/info-button.svg"
+                      alt="Info button"
+                      height={'20px'}
+                      width={'20px'}
+                      style={{ margin: '5px 0', filter: 'brightness(0) saturate(100%) invert(18%) sepia(100%) saturate(7493%) hue-rotate(356deg) brightness(80%) contrast(111%)' }}
+                      />
+                  </span>
+                </Box>
               </Typography>
+
               <Typography
                 variant="body2"
                 sx={{ marginTop: 1, color: (theme) => theme.palette.mode === 'light' ? blue[700] : blue[300]}}
