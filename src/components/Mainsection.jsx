@@ -77,9 +77,10 @@ const Mainsection = () => {
     setResult([]);
     setError(null);
     const inputLines = videoIds.split(/\r?\n/);
-    const idRegex = /(?:https?:\/\/(?:www\.)?youtube\.com\/watch\?v=|^)([a-zA-Z0-9_-]{11})(?:&.*)?$/;
+    
+    const idRegex = /(?:https?:\/\/(?:www\.)?youtube\.com\/watch\?v=|https?:\/\/youtu\.be\/)([a-zA-Z0-9_-]{11})(?:[?&].*)?$/;
     const uniqueIds = new Set();
-
+  
     inputLines.forEach((line) => {
       const trimmedLine = line.trim();
       const match = idRegex.exec(trimmedLine);
@@ -88,10 +89,14 @@ const Mainsection = () => {
       }
     });
 
+    if(uniqueIds.length === 0){
+      setError("No URL detected.");
+    }
+  
     const results = [];
     const API_URL =
       process.env.NEXT_PUBLIC_BACKEND_API_URL || "http://localhost:4000/api/v1";
-
+  
     for (const videoId of uniqueIds) {
       try {
         const response = await axios.get(
@@ -111,6 +116,7 @@ const Mainsection = () => {
     setResult(results);
     setIsLoading(false);
   };
+  
 
   const handleCopyToClipboard = (videoDetails, numberOfComments, parts, index) => {
     if (!document.hasFocus()) {
