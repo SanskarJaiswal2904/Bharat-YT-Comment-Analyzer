@@ -32,6 +32,9 @@ export default function RootLayout({ children }) {
         {/* Apple Touch Icon */}
         <link rel="apple-touch-icon" href="/logo192.png" />
 
+        <title>Bharat YouTube Comment Analyzer</title>
+
+
 
         {/* Font Awesome Links */}
         <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet" />
