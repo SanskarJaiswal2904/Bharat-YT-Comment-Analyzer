@@ -280,7 +280,7 @@ const Mainsection = () => {
             {isLoading ? (
               <EmptySearchMessage message="Searching... The larger the number of comments, the more time it will take to analyze" />
             ) : (
-              <EmptySearchMessage message="Search for a playlist to get its details." />
+              <EmptySearchMessage message="Search for a video/short to get its details." />
             )}
           </Box>
             ) : (
