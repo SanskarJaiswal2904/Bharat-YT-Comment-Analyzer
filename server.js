@@ -13,6 +13,7 @@ const PORT = process.env.PORT;
 const allowedOrigins = [
   'https://bharat-yt-comment-analyzer.vercel.app',
   'http://localhost:4000',
+  'http://localhost:3000',
 ];
 
 app.use(

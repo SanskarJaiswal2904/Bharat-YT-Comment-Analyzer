@@ -16,13 +16,14 @@ import {
   Box,
   IconButton,
   Tooltip,
+  Badge,
   Grid,
 } from "@mui/material";
 import { CopyAll, Done } from "@mui/icons-material";
 import axios from "axios";
 import IndiaGlobal from "./IndiaGlobal";
 import EmptySearchMessage from "./EmptySearchMessage";
-import { blue, teal, pink, lime, amber } from '@mui/material/colors';
+import { teal, pink, lime, amber } from '@mui/material/colors';
 
 
 const Mainsection = () => {
@@ -280,7 +281,7 @@ const Mainsection = () => {
             {isLoading ? (
               <EmptySearchMessage message="Searching... The larger the number of comments, the more time it will take to analyze" />
             ) : (
-              <EmptySearchMessage message="Search for a video/short to get its details." />
+              <EmptySearchMessage message="Search for a video/short to get its details. Only first 3000 comments will be analyzed" />
             )}
           </Box>
             ) : (
@@ -309,6 +310,7 @@ const Mainsection = () => {
           md={4}
           key={videoId}
         >
+
           <Card
             sx={{
               backgroundColor: (theme) => theme.palette.background.default,
@@ -325,6 +327,7 @@ const Mainsection = () => {
             }}
           >
             {/* Thumbnail */}
+
             <Box
               sx={{
                 width: { xs: '250px', sm: '270px', md: '300px', lg: '350px', xl: '400px' },
@@ -339,19 +342,24 @@ const Mainsection = () => {
                 title: {title},
               }}
             >
-              <img
-                src={thumbnailUrl}
-                loading="lazy"
-                alt="Video"
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  objectFit: 'cover',
-                }}
-              />
+              
+                <img
+                  src={thumbnailUrl}
+                  loading="lazy"
+                  alt="Video"
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    objectFit: 'cover',
+                  }}
+                />
             </Box>
 
             {/* Content */}
+            <Badge   badgeContent={data.modelVersion === "gemini-1.5-flash" ? "Gemini 1.5 Flash" : data.modelVersion}  color="secondary" sx={{mr: 6}}   anchorOrigin={{
+              vertical: 'top',
+              horizontal: 'right',
+            }}>
             <CardContent
               sx={{
                 padding: 3, // Add more padding for breathing room
@@ -420,13 +428,6 @@ const Mainsection = () => {
                   </span>
                 </Box>
               </Typography>
-
-              <Typography
-                variant="body2"
-                sx={{ marginTop: 1, color: (theme) => theme.palette.mode === 'light' ? blue[700] : blue[300]}}
-              >
-                <strong>Model Version:</strong> {data.modelVersion}
-              </Typography>
               <Typography
                 variant="body2"
                 color="text.secondary"
@@ -445,6 +446,7 @@ const Mainsection = () => {
                 ))}
               </Typography>
             </CardContent>
+            </Badge>
 
             {/* Actions */}
             <CardActions
@@ -504,6 +506,8 @@ const Mainsection = () => {
               </Tooltip>
             </CardActions>
           </Card>
+
+
         </Grid>
       );
     })}
