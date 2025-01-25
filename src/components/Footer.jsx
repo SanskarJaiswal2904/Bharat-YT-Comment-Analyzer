@@ -67,15 +67,24 @@ const Footer = () => {
                 alignItems: 'center', // Vertically centers the items
                 justifyContent: 'center', // Horizontally center the items
                 gap: 1, // Adds space between the icons and text
+                flexDirection: 'column'
             }}
             >
+              <Box>
             This website is built using:{' '}
+            </Box>
+            <Box sx={{mt: 1, 
+                display: 'flex', // Enables flexbox to align items horizontally
+                alignItems: 'center', // Vertically centers the items
+                justifyContent: 'center', // Horizontally center the items
+                gap: 1,}}>
             <img src="/html-1.svg" alt="HTML logo" height={'15px'} width={'15px'} style={{ margin: '0 5px' }} title='HTML5'/>
             <img src="/css-3.svg" alt="CSS logo" height={'15px'} width={'15px'} style={{ margin: '0 5px' }} title='CSS3'/>
             <img src="/logo-javascript.svg" alt="Javascript logo" height={'15px'} width={'15px'} style={{ margin: '0 5px' }} title='Javascript (ES6+)' />
             <img src="/next.svg" alt="Next.js logo" height={'37px'} width={'37px'} style={{ margin: '0 5px' }} title='Next.js' />
             <img src="/nodejs-horizontal.svg" alt="Node.js logo" height={'15px'} width={'auto'} style={{ margin: '0 5px' }} title='Node.js' />
             <img src="/gemini-color.svg" alt="Gemini logo" height={'20px'} width={'20px'} style={{ margin: '0 5px' }} title='Gemini AI' />
+            </Box>
             </Typography>
 
 
